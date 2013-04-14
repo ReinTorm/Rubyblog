@@ -1,0 +1,4 @@
+class AddClosedColumnToPosts < ActiveRecord::Migration
+  def change
+  end
+end

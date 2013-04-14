@@ -1,0 +1,43 @@
+<div id ="container">
+<p id="notice"><%= notice %></p>
+<div id ="header"> 
+<br /> <br /> 
+<p>
+  <h2><i><%= @post.title %></i></h2>
+</p>
+</div>
+<div id ="post"> 
+<p>
+  <center> 
+  <div id="content"> 
+  <b>Content</b>
+  <br/>
+  
+  <%= @post.content %><br /> 
+   <i><b>Author:</b>
+  <%= @post.name %></i>
+  </div>
+  </center>
+</p>
+</div> 
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@post) %>
+</p>
+ 
+<h2>Comments</h2>
+
+<%= render @post.comments %>
+<% if @post.comments.count > 0 %>
+ <%= button_to 'Delete all comments', destroy_all_post_comments_path(@post),
+:confirm => 'Are you sure?', :method => :delete%>
+<% end%>
+<% if !@post.closed %> 
+         <h2>Add a comment:</h2>
+         <%= render "comments/form" %>
+
+<% end %> 
+ 
+<%= link_to 'Edit Post', edit_post_path(@post) %> |
+<%= link_to 'Back to Posts', posts_path %> |
+</div>

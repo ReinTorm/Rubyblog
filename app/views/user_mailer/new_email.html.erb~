@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    Hello. <b><%= @post.name %></b>
+    <p>
+     A new comment has been written to your<a href="<%= @url %>">post:</a>
+     <br /> 
+     <%=@comment.body %> 
+     
+    </p>
+    <p>By commenter: <%=@comment.commenter %> </p>
+  </body>
+</html>

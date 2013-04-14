@@ -1,0 +1,5 @@
+class AddEmailColumnToPosts < ActiveRecord::Migration
+  def change
+    :posts, :email, :string
+  end
+end
